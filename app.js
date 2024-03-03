@@ -46,7 +46,9 @@ const displayAllPosts = (allPosts) => {
             </div>
         `
         allPostsContainer.appendChild(div)
+
     });
+    toggleLoadingSpinner(false)
 }
 
 
@@ -61,7 +63,6 @@ const handleSearch = () => {
 
 
 let newsCount = document.getElementById('news-count').innerText;
-
 const readNews = (title, view) => {
     // console.log('read done', title, view)
     const readNewsContainer = document.getElementById('read-news-container')
@@ -83,6 +84,24 @@ const readNews = (title, view) => {
     document.getElementById('news-count').innerText = newsCount
     // console.log(newsCount)
 }
+
+
+
+function toggleLoadingSpinner(isLoading) {
+    const loadingSpinner = document.getElementById('loading-spinner-container')
+    if (isLoading) {
+        loadingSpinner.classList.remove('hidden')
+    } else{
+        // loadingSpinner.classList.set('hidden')
+    }
+}
+// const toggleLoadingSpinner = (isLoading) => {
+//     const loadingSpinner = document.getElementById('loading-spinner-container')
+//     if (isLoading) {
+//         loadingSpinner.classList.remove('hidden')
+//     }
+// }
+
 
 
 // Load all latest post:-

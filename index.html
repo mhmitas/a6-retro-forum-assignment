@@ -70,8 +70,10 @@
                         </h1>
                         <p>Share your favorite opinion and win and wp forum coffee mug!</p>
                         <div class="join text-slate-950 font-semibold">
-                            <input id="search-input" type="text" id="" class="input input-bordered join-item" placeholder="Search here anything" />
-                            <button onclick="handleSearch()" class="btn btn-primary join-item rounded-r-full">Search</button>
+                            <input id="search-input" type="text" id="" class="input input-bordered join-item"
+                                placeholder="Search here anything" />
+                            <button onclick="handleSearch()"
+                                class="btn btn-primary join-item rounded-r-full">Search</button>
                         </div>
                     </div>
                     <!-- right side -->
@@ -98,12 +100,18 @@
                     features
                     allow for a streamlined .</p>
             </div>
+            <!-- loading spenner -->
+            <div id="loading-spinner-container" class="hidden">
+                <div class="flex justify-center items-center my-24">
+                    <span class="loading loading-spinner text-primary loading-lg"></span>
+                </div>
+            </div>
             <!-- card and detail section -->
             <section class="mb-24 flex flex-col md:flex-row justify-between gap-12">
                 <!-- left side  -->
                 <div id="all-posts-container" class="w-full md:w-4/6">
 
-                    <!-- ---------------- -->
+                    <!-- -------- cards -------- -->
                 </div>
                 <!-- right side -->
                 <!-- selected card details container -->
