@@ -52,7 +52,7 @@ const readNews = (title, view) => {
     const readNewsContainer = document.getElementById('read-news-container')
 
     const div = document.createElement('div')
-    div.classList= 'flex justify-between p-4 bg-slate-50 rounded-xl'
+    div.classList = 'flex justify-between p-4 bg-slate-50 rounded-xl'
     div.innerHTML = `
     <p>${title}</p>
     <div class="flex items-center gap-2">
@@ -64,7 +64,51 @@ const readNews = (title, view) => {
     `
     readNewsContainer.appendChild(div)
 
-    newsCount ++
+    newsCount++
     document.getElementById('news-count').innerText = newsCount
-    console.log(newsCount)
+    // console.log(newsCount)
 }
+
+
+// Load all latest post:-
+const loadAllLatestPosts = async () => {
+    // console.log('loadAllLatestPosts')
+    const latestPostContainer = document.getElementById('latest-post-container')
+
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`)
+    const data = await res.json()
+    console.log(data)
+
+    data.forEach(item => {
+        console.log(item)
+
+        const div = document.createElement('div')
+        div.classList = 'rounded-xl max-w-[421px] border bg-base-100 shadow-xl p-10 space-y-6'
+        div.innerHTML = `
+        <figure><img class="rounded-xl" src="${item.cover_image}" alt="Shoes" />
+        </figure>
+        <div class=" space-y-5">
+            <div class="flex">
+                <img src="images/calender-icon.svg" alt="">
+                <p>${item?.author?.posted_date ?? 'No publish date'}</p>
+            </div>
+            <h2 class="card-title font-bold">${item.title}</h2>
+            <p>${item.description}</p>
+            <div class="flex gap-6">
+                <div class="w-11">
+                    <img class="rounded-full" src="${item.profile_image}"/>
+                </div>
+                <div>
+                    <p class="text-xl font-bold">${item?.author?.name}</p>
+                    <p>${item?.author?.designation ? item.author.designation : 'Unknown'}</p>
+                </div>
+            </div>
+        </div>
+    `
+        latestPostContainer.appendChild(div)
+    })
+
+
+}
+
+loadAllLatestPosts()
