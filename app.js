@@ -4,6 +4,7 @@ const loadAllPosts = async (cat) => {
     const data = await res.json()
     // console.log(data.posts)
     const allPosts = data.posts
+    // document.getElementById('loading-spinner-container').classList.remove('hidden')
     displayAllPosts(allPosts)
 }
 loadAllPosts('')
@@ -45,16 +46,16 @@ const displayAllPosts = (allPosts) => {
             </div>
             </div>
         `
+        toggleLoadingSpinner(false)
         allPostsContainer.appendChild(div)
-
     });
-    toggleLoadingSpinner(false)
 }
 
 
 
 // handle search
 const handleSearch = () => {
+    toggleLoadingSpinner(true)
     const searchInput = document.getElementById('search-input').value
     // console.log(searchInput)
     loadAllPosts(searchInput)
@@ -87,18 +88,23 @@ const readNews = (title, view) => {
 
 
 
-function toggleLoadingSpinner(isLoading) {
-    const loadingSpinner = document.getElementById('loading-spinner-container')
+
+const toggleLoadingSpinner = (isLoading) => {
     if (isLoading) {
-        loadingSpinner.classList.remove('hidden')
-    } else{
-        // loadingSpinner.classList.set('hidden')
+        console.log('loading')
+        document.getElementById('loading-spinner-container').classList.remove('hidden')
+    } else {
+        console.log('not loading')
+        document.getElementById('loading-spinner-container').classList.add('hidden')
     }
 }
-// const toggleLoadingSpinner = (isLoading) => {
+
+// function toggleLoadingSpinner(isLoading) {
 //     const loadingSpinner = document.getElementById('loading-spinner-container')
 //     if (isLoading) {
 //         loadingSpinner.classList.remove('hidden')
+//     } else{
+//         loadingSpinner.classList.set('hidden')
 //     }
 // }
 
