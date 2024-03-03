@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="">
 
 <head>
     <meta charset="UTF-8">
@@ -103,41 +103,6 @@
                 <!-- left side  -->
                 <div id="all-posts-container" class="w-full md:w-4/6">
 
-                    <!--  cards -->
-                    <!-- <div>
-                        <div class="flex flex-col md:flex-row gap-8 p-8 shadow-xl bg-[#F3F3F5] rounded-xl">
-                            <div class="indicator">
-                                <span class="indicator-item badge badge-error"></span>
-                                <div class="grid w-20 h-20 bg-slate-50 place-items-center rounded-xl">
-                                    <img class="w-full" src="images/flag.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="space-y-2">
-                                    <div><span class="mr-4"># Music</span> <span>Author : Awlad Hossain</span></div>
-                                    <h4 class="text-xl font-bold">10 Kids Unaware of Their Halloween Costume</h4>
-                                    <p>It’s one thing to subject yourself to ha Halloween costume mishap because, hey
-                                        that’s
-                                        your prerogative</p>
-                                </div>
-                                <hr>
-                                <div class="flex justify-between flex-col md:flex-row gap-4">
-                                    <div class="flex gap-6">
-                                        <div class="flex gap-4"><img src="images/message.svg" alt=""><span>550</span>
-                                        </div>|
-                                        <div class="flex gap-4"><img src="images/icon-eye.svg" alt=""><span>550</span>
-                                        </div>
-                                        |
-                                        <div class="flex gap-4"><img src="images/clock-hour-9.svg"
-                                                alt=""><span>550</span>
-                                        </div>
-                                    </div>
-                                    <img class="w-7" src="images/green-message-icon.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
                     <!-- ---------------- -->
                 </div>
                 <!-- right side -->
@@ -145,18 +110,19 @@
                 <div class="w-full md:w-4/12 h-min min-h-14 bg-[#F3F3F5] shadow-xl p-8 rounded-xl space-y-4">
                     <div class="flex justify-between">
                         <p class="text-xl font-bold">Title</p>
-                        <p>✅ Mark as read (4)</p>
+                        <p>✅ Mark as read (<span id="news-count">0</span>)</p>
                     </div>
                     <!-- constainer -->
-                    <div class="flex justify-between p-2 bg-slate-50 rounded-xl">
-                        <p>10 Kids Unaware of Their Halloween Costume</p>
-                        <div class="flex items-center gap-2">
-                            <div class="w-8">
-                                <img src="images/icon-eye.svg" alt="">
+                    <div id="read-news-container" class="space-y-4">
+                        <!-- <div class="flex justify-between p-4 bg-slate-50 rounded-xl">
+                            <p>10 Kids Unaware of Their Halloween Costume</p>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8">
+                                    <img src="images/icon-eye.svg" alt="">
+                                </div>
+                                <p>1,568</p>
                             </div>
-                            <!-- <p>Lorem, ipsum dolor.</p> -->
-                            <p>1,568</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
