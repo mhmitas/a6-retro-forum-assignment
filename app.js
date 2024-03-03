@@ -6,13 +6,12 @@ const loadAllPosts = async (cat) => {
     const allPosts = data.posts
     displayAllPosts(allPosts)
 }
-
 loadAllPosts('')
 
 
 const displayAllPosts = (allPosts) => {
     const allPostsContainer = document.getElementById('all-posts-container')
-
+    allPostsContainer.textContent = "";
     allPosts.forEach(post => {
         // console.log(post)
         const div = document.createElement('div')
@@ -41,7 +40,7 @@ const displayAllPosts = (allPosts) => {
                                 alt=""><span>${post.posted_time}</span>
                         </div>
                     </div>
-                    <button onclick="readNews('${post.title}', '${post.view_count}')" class="btn bg-indigo-100"><img class="w-7" src="images/green-message-icon.png" alt=""></button>
+                    <button onclick='readNews("${post.title}", "${post.view_count}")' class="btn bg-indigo-100"><img class="w-7" src="images/green-message-icon.png" alt=""></button>
                 </div>
             </div>
             </div>
@@ -52,8 +51,17 @@ const displayAllPosts = (allPosts) => {
 
 
 
+// handle search
+const handleSearch = () => {
+    const searchInput = document.getElementById('search-input').value
+    // console.log(searchInput)
+    loadAllPosts(searchInput)
+}
 
-let newsCount = document.getElementById('news-count').innerText
+
+
+let newsCount = document.getElementById('news-count').innerText;
+
 const readNews = (title, view) => {
     // console.log('read done', title, view)
     const readNewsContainer = document.getElementById('read-news-container')
