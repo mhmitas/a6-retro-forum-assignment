@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body class="container mx-auto border">
+<body class="container mx-auto">
     <header>
         <!-- nav bar -->
         <nav>
@@ -65,7 +65,8 @@
                 <div class="hero-content w-full justify-between flex-col lg:flex-row">
                     <!-- left side -->
                     <div class="flex flex-col space-y-8">
-                        <h1 class="text-3xl lg:text-6xl font-black">Welcome to the <br><span class="retro-kerpa">ReTro</span> Forum
+                        <h1 class="text-3xl lg:text-6xl font-black">Welcome to the <br><span
+                                class="retro-kerpa">ReTro</span> Forum
                         </h1>
                         <p>Share your favorite opinion and win and wp forum coffee mug!</p>
                         <div class="join text-slate-950 font-bold">
@@ -75,9 +76,9 @@
                     </div>
                     <!-- right side -->
                     <div
-                        class="flex items-center p-8 w-96 h-72  border-4 border-blue-500 bg-slate-100 text-black rounded-2xl">
+                        class="flex items-center p-8 max-w-96 md:min-w-96 h-72  border-4 border-blue-500 bg-slate-100 text-black rounded-2xl">
                         <div class="w-full space-y-4 text-2xl *:flex *:justify-between">
-                            <div><span>Registered Users</span><span>05</span></div>
+                            <div><span>Registered Users</div>
                             <div><span>Forum</span><span>05</span></div>
                             <div><span>Topic</span><span>05</span></div>
                             <div><span>Relies</span><span>05</span></div>
@@ -92,15 +93,16 @@
         <section class="mb-24">
             <div class="mb-16">
                 <h3 class="text-4xl font-bold text-center">Let’s Discuss</h3>
-                <p class="w-[600px] mx-auto text-center mt-4">Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                <p class="max-w-[600px] mx-auto text-center mt-4">Yes, you can run unit tests and view the results
+                    directly within the app. The integrated testing
                     features
                     allow for a streamlined .</p>
             </div>
             <!-- card and detail section -->
-            <section class="mb-24 flex justify-between gap-12">
+            <section class="mb-24 flex flex-col md:flex-row justify-between gap-12">
                 <!-- left side  -->
                 <!--  cards -->
-                <div class="flex gap-8 p-8 w-4/6 shadow-xl bg-[#F3F3F5] rounded-xl">
+                <div class="flex flex-col md:flex-row gap-8 p-8 w-full md:w-4/6 shadow-xl bg-[#F3F3F5] rounded-xl">
                     <!-- img of person -->
                     <div class="w-20 h-20 border border-black">
                         <img class="w-full" src="images/flag.svg" alt="">
@@ -113,19 +115,19 @@
                                 your prerogative</p>
                         </div>
                         <hr>
-                        <div class="flex justify-between">
+                        <div class="flex justify-between flex-col md:flex-row gap-4">
                             <div class="flex gap-6">
                                 <div class="flex gap-4"><img src="images/message.svg" alt=""><span>550</span></div>|
                                 <div class="flex gap-4"><img src="images/icon-eye.svg" alt=""><span>550</span></div>|
                                 <div class="flex gap-4"><img src="images/clock-hour-9.svg" alt=""><span>550</span></div>
                             </div>
-                            <img src="images/green-message-icon.png" alt="">
+                            <img class="w-7" src="images/green-message-icon.png" alt="">
                         </div>
                     </div>
                 </div>
 
                 <!-- selected card details container -->
-                <div class="w-4/12 min-h-14 bg-[#F3F3F5] shadow-xl p-8 rounded-xl space-y-4">
+                <div class="w-full md:w-4/12 min-h-14 bg-[#F3F3F5] shadow-xl p-8 rounded-xl space-y-4">
                     <div class="flex justify-between">
                         <p class="text-xl font-bold">Title</p>
                         <p>✅ Mark as read (4)</p>
@@ -145,16 +147,46 @@
             </section>
         </section>
         <!-- Join Our Forum Section -->
-        <section class="bg-[#12132D] text-slate-50 flex justify-between p-10 rounded-xl max-h-96">
+        <section
+            class="mb-24 bg-[#12132D] text-slate-50 flex flex-col md:flex-row justify-between p-10 rounded-xl gap-4">
             <!-- left side  -->
             <div class="max-w-[650px] space-y-8 my-auto ml-10">
                 <h4 class="text-4xl font-bold">Join Our Forum</h4>
-                <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the
+                    results directly within the app. </p>
                 <button class="btn btn-primary">Registere Now</button>
             </div>
             <!-- img side  -->
             <div>
-                <img class="h-full border" src="images/joinforum.png" alt="">
+                <img class="h-full" src="images/joinforum.png" alt="">
+            </div>
+        </section>
+
+        <!-- Latest Posts section  -->
+        <section class="mb-24  flex flex-wrap justify-around">
+            <!-- Latest Posts cards -->
+            <div class="rounded-xl max-w-[421px] border bg-base-100 shadow-xl p-10 space-y-6">
+                <figure><img class="rounded-xl"
+                        src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+                </figure>
+                <div class=" space-y-5">
+                    <div class="flex">
+                        <img src="images/calender-icon.svg" alt="">
+                        <p>29 January 2024</p>
+                    </div>
+                    <h2 class="card-title font-bold">What will a mars habitat force that impact in our daily life!!!
+                    </h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <div class="flex gap-6">
+                        <div class="w-11 rounded-full">
+                            <img src="images/Ellipse 1.png" />
+                        </div>
+                        <div>
+                            <p class="text-xl font-bold">Name cameronbhai</p>
+                            <p>Unknown</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
