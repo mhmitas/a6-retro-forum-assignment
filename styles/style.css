@@ -11,13 +11,12 @@ body {
 }
 
 .retro-kerpa {
-    font-size: 72px;
-    background: linear-gradient(to right,#797DFC, #1229fa);
+    background: linear-gradient(to right, #797DFC, #1229fa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.banner{
+.banner {
     background-color: #12132D;
     background-image: url('../images/bgbanner.png');
 }

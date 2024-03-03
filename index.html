@@ -62,10 +62,10 @@
         <!-- hero/banner section  -->
         <section>
             <div class="hero min-h-[550px] banner text-white rounded-xl">
-                <div class="hero-content w-full justify-between">
+                <div class="hero-content w-full justify-between flex-col lg:flex-row">
                     <!-- left side -->
                     <div class="flex flex-col space-y-8">
-                        <h1 class="text-6xl font-black">Welcome to the <br><span class="retro-kerpa">ReTro</span> Forum
+                        <h1 class="text-3xl lg:text-6xl font-black">Welcome to the <br><span class="retro-kerpa">ReTro</span> Forum
                         </h1>
                         <p>Share your favorite opinion and win and wp forum coffee mug!</p>
                         <div class="join text-slate-950 font-bold">
@@ -91,14 +91,16 @@
         <!-- Let’s Discuss section -->
         <section class="mb-24">
             <div class="mb-16">
-                <h3>Let’s Discuss</h3>
-                <p>Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                <h3 class="text-4xl font-bold text-center">Let’s Discuss</h3>
+                <p class="w-[600px] mx-auto text-center mt-4">Yes, you can run unit tests and view the results directly within the app. The integrated testing
                     features
                     allow for a streamlined .</p>
             </div>
-            <section class="mb-24">
-                <!-- left side > cards -->
-                <div class="border-2 flex gap-8 p-8 w-[772px] bg-[#F3F3F5] rounded-xl">
+            <!-- card and detail section -->
+            <section class="mb-24 flex justify-between gap-12">
+                <!-- left side  -->
+                <!--  cards -->
+                <div class="flex gap-8 p-8 w-4/6 shadow-xl bg-[#F3F3F5] rounded-xl">
                     <!-- img of person -->
                     <div class="w-20 h-20 border border-black">
                         <img class="w-full" src="images/flag.svg" alt="">
@@ -123,12 +125,37 @@
                 </div>
 
                 <!-- selected card details container -->
-                <div class="w-[374px] min-h-14 bg-slate-200 ">
-                    <div>
-                        <p>Title</p>
+                <div class="w-4/12 min-h-14 bg-[#F3F3F5] shadow-xl p-8 rounded-xl space-y-4">
+                    <div class="flex justify-between">
+                        <p class="text-xl font-bold">Title</p>
+                        <p>✅ Mark as read (4)</p>
+                    </div>
+                    <!-- constainer -->
+                    <div class="flex justify-between p-2 bg-slate-50 rounded-xl">
+                        <p>10 Kids Unaware of Their Halloween Costume</p>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8">
+                                <img src="images/icon-eye.svg" alt="">
+                            </div>
+                            <!-- <p>Lorem, ipsum dolor.</p> -->
+                            <p>1,568</p>
+                        </div>
                     </div>
                 </div>
             </section>
+        </section>
+        <!-- Join Our Forum Section -->
+        <section class="bg-[#12132D] text-slate-50 flex justify-between p-10 rounded-xl max-h-96">
+            <!-- left side  -->
+            <div class="max-w-[650px] space-y-8 my-auto ml-10">
+                <h4 class="text-4xl font-bold">Join Our Forum</h4>
+                <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                <button class="btn btn-primary">Registere Now</button>
+            </div>
+            <!-- img side  -->
+            <div>
+                <img class="h-full border" src="images/joinforum.png" alt="">
+            </div>
         </section>
     </main>
     <footer>
