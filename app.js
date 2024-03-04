@@ -44,7 +44,7 @@ const displayAllPosts = (allPosts) => {
                                 alt=""><span>${post.posted_time}</span>
                         </div>
                     </div>
-                    <button onclick='readNews("${post.title}", "${post.view_count}")' class="btn bg-indigo-100"><img class="w-7" src="images/green-message-icon.png" alt=""></button>
+                    <button onclick='readNews("${post.title.replace(/'/g,'@')}", "${post.view_count}")' class="btn bg-indigo-100"><img class="w-7" src="images/green-message-icon.png" alt=""></button>
                 </div>
             </div>
             </div>
@@ -74,7 +74,7 @@ const readNews = (title, view) => {
     const div = document.createElement('div')
     div.classList = 'flex justify-between p-4 bg-slate-50 rounded-xl'
     div.innerHTML = `
-    <p>${title}</p>
+    <p>${title.replace("@","'")}</p>
     <div class="flex items-center gap-2">
         <div class="w-8">
             <img src="images/icon-eye.svg" alt="">
