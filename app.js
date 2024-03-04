@@ -4,13 +4,15 @@ const loadAllPosts = async (cat) => {
     const data = await res.json()
     // console.log(data.posts)
     const allPosts = data.posts
-    // document.getElementById('loading-spinner-container').classList.remove('hidden')
     displayAllPosts(allPosts)
 }
 loadAllPosts('')
 
 
 const displayAllPosts = (allPosts) => {
+
+    toggleLoadingSpinner(true)
+
     const allPostsContainer = document.getElementById('all-posts-container')
     allPostsContainer.textContent = "";
     allPosts.forEach(post => {
