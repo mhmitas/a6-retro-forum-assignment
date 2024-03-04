@@ -1,15 +1,22 @@
 // Load all posts
 const loadAllPosts = async (cat) => {
 
-    toggleLoadingSpinner(true)
-
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${cat}`)
     const data = await res.json()
     // console.log(data.posts)
     const allPosts = data.posts
     displayAllPosts(allPosts)
 }
-loadAllPosts('')
+
+
+function callLoadAllpostsFunction() {
+    toggleSkeleton(true)
+    setTimeout(() => {
+        loadAllPosts('')
+
+    }, 3000);
+}
+callLoadAllpostsFunction()
 
 
 const displayAllPosts = (allPosts) => {
@@ -44,12 +51,13 @@ const displayAllPosts = (allPosts) => {
                                 alt=""><span>${post.posted_time}</span>
                         </div>
                     </div>
-                    <button onclick='readNews("${post.title.replace(/'/g,'@')}", "${post.view_count}")' class="btn bg-indigo-100"><img class="w-7" src="images/green-message-icon.png" alt=""></button>
+                    <button onclick='readNews("${post.title.replace(/'/g, '@')}", "${post.view_count}")' class="btn bg-indigo-100"><img class="w-7" src="images/green-message-icon.png" alt=""></button>
                 </div>
             </div>
             </div>
         `
         toggleLoadingSpinner(false)
+        toggleSkeleton(false)
         allPostsContainer.appendChild(div)
     });
 }
@@ -60,8 +68,11 @@ const displayAllPosts = (allPosts) => {
 const handleSearch = () => {
     const searchInput = document.getElementById('search-input').value
     // console.log(searchInput)
+    toggleLoadingSpinner(true)
+    setTimeout(() => {
+        loadAllPosts(searchInput)
 
-    loadAllPosts(searchInput)
+    }, 3000);
 }
 
 
@@ -74,7 +85,7 @@ const readNews = (title, view) => {
     const div = document.createElement('div')
     div.classList = 'flex justify-between p-4 bg-slate-50 rounded-xl'
     div.innerHTML = `
-    <p>${title.replace("@","'")}</p>
+    <p>${title.replace("@", "'")}</p>
     <div class="flex items-center gap-2">
         <div class="w-8">
             <img src="images/icon-eye.svg" alt="">
@@ -100,6 +111,15 @@ function toggleLoadingSpinner(isLoading) {
     }
 }
 
+function toggleSkeleton(status) {
+    const skelieon = document.getElementById('skeleton')
+    if (status) {
+        skelieon.classList.remove('hidden')
+    } else {
+        skelieon.classList.add('hidden')
+    }
+}
+toggleSkeleton(true)
 
 
 // Load all latest post:-

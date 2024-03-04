@@ -98,9 +98,13 @@
             <div class="mb-16">
                 <h3 class="text-4xl font-black text-center">Let’s Discuss</h3>
                 <p class="max-w-[600px] mx-auto text-center mt-4">Tired of the same old echo chamber? FOFUM is your
-                    platform to share your unique voice and engage in respectful debates. Join our thriving community!</p>
+                    platform to share your unique voice and engage in respectful debates. Join our thriving community!
+                </p>
             </div>
             <!-- loading spenner -->
+            <div id="skeleton" class="hidden">
+                <div class="skeleton w-full h-[70vh] "></div>
+            </div>
             <div id="loading-spinner-container" class="hidden">
                 <div class="flex justify-center items-center my-24">
                     <span class="loading loading-spinner text-primary loading-lg"></span>
@@ -118,7 +122,11 @@
                 <div class="w-full md:w-4/12 h-min min-h-14 bg-[#F3F3F5] shadow-xl p-8 rounded-xl space-y-4">
                     <div class="flex justify-between">
                         <p class="text-xl font-bold">Title</p>
-                        <p class="flex gap-2"><svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#74C0FC" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> Mark as read (<span id="news-count">0</span>)</p>
+                        <p class="flex gap-2"><svg class="w-4" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path fill="#74C0FC"
+                                    d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+                            </svg> Mark as read (<span id="news-count">0</span>)</p>
                     </div>
                     <!-- constainer -->
                     <div id="read-news-container" class="space-y-4">
@@ -141,7 +149,8 @@
             <!-- left side  -->
             <div class="max-w-[650px] space-y-8 my-auto ml-10">
                 <h4 class="text-4xl font-bold">Join Our Forum</h4>
-                <p>Share your favorite opinions and connect with like-minded individuals. Sharpen your critical thinking, broaden your horizons, and win a cool coffee mug!</p>
+                <p>Share your favorite opinions and connect with like-minded individuals. Sharpen your critical
+                    thinking, broaden your horizons, and win a cool coffee mug!</p>
                 <button class="btn btn-primary">Registere Now</button>
             </div>
             <!-- img side  -->
@@ -154,29 +163,7 @@
         <section class="mb-24">
             <!-- Latest Posts cards -->
             <div id="latest-post-container" class=" flex justify-around">
-                <!-- <div class="rounded-xl max-w-[421px] border bg-base-100 shadow-xl p-10 space-y-6">
-                    <figure><img class="rounded-xl"
-                            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-                    </figure>
-                    <div class=" space-y-5">
-                        <div class="flex">
-                            <img src="images/calender-icon.svg" alt="">
-                            <p>29 January 2024</p>
-                        </div>
-                        <h2 class="card-title font-bold">What will a mars habitat force that impact in our daily life!!!
-                        </h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="flex gap-6">
-                            <div class="w-11 rounded-full">
-                                <img src="images/Ellipse 1.png" />
-                            </div>
-                            <div>
-                                <p class="text-xl font-bold">Name cameronbhai</p>
-                                <p>Unknown</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <!--  -->
             </div>
         </section>
     </main>
