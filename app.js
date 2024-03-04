@@ -1,5 +1,8 @@
 // Load all posts
 const loadAllPosts = async (cat) => {
+
+    toggleLoadingSpinner(true)
+
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${cat}`)
     const data = await res.json()
     // console.log(data.posts)
@@ -11,15 +14,13 @@ loadAllPosts('')
 
 const displayAllPosts = (allPosts) => {
 
-    toggleLoadingSpinner(true)
-
     const allPostsContainer = document.getElementById('all-posts-container')
     allPostsContainer.textContent = "";
     allPosts.forEach(post => {
         // console.log(post)
         const div = document.createElement('div')
         div.innerHTML = `
-            <div class="flex flex-col md:flex-row gap-8 p-8 shadow-xl bg-[#F3F3F5] rounded-xl mb-10">
+            <div class="flex flex-col md:flex-row gap-8 p-8 shadow-xl bg-[#F3F3F5] rounded-xl mb-10 hover:bg-blue-50 hover:border">
             <div class="indicator">
                 <span class="indicator-item badge ${post.isActive ? 'badge-error' : 'badge-success'}"></span>
                 <div class="grid w-20 h-20 bg-slate-50 place-items-center rounded-xl">
@@ -57,9 +58,9 @@ const displayAllPosts = (allPosts) => {
 
 // handle search
 const handleSearch = () => {
-    toggleLoadingSpinner(true)
     const searchInput = document.getElementById('search-input').value
     // console.log(searchInput)
+
     loadAllPosts(searchInput)
 }
 
@@ -90,25 +91,14 @@ const readNews = (title, view) => {
 
 
 
-
-const toggleLoadingSpinner = (isLoading) => {
+function toggleLoadingSpinner(isLoading) {
+    const loadingSpinner = document.getElementById('loading-spinner-container')
     if (isLoading) {
-        console.log('loading')
-        document.getElementById('loading-spinner-container').classList.remove('hidden')
+        loadingSpinner.classList.remove('hidden')
     } else {
-        console.log('not loading')
-        document.getElementById('loading-spinner-container').classList.add('hidden')
+        loadingSpinner.classList.add('hidden')
     }
 }
-
-// function toggleLoadingSpinner(isLoading) {
-//     const loadingSpinner = document.getElementById('loading-spinner-container')
-//     if (isLoading) {
-//         loadingSpinner.classList.remove('hidden')
-//     } else{
-//         loadingSpinner.classList.set('hidden')
-//     }
-// }
 
 
 
